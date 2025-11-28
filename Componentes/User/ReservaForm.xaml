@@ -1,0 +1,214 @@
+﻿<Window x:Class="chaski_tours_desk.Componentes.User.ReservaForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:chaski_tours_desk.Componentes.User"
+        mc:Ignorable="d"
+        Title="Reserva de Tour" 
+        WindowState="Maximized"
+        WindowStartupLocation="CenterScreen"
+        Background="#FFF5EDE0">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Border CornerRadius="5"
+                    Margin="40"
+                    Background="White"
+                    Padding="30"
+                    VerticalAlignment="Top">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" 
+                                  Color="#FF7D7D7D" 
+                                  Opacity="0.3" 
+                                  BlurRadius="15"
+                                  Direction="270"/>
+                </Border.Effect>
+
+                <StackPanel>
+                    <!-- Título -->
+                    <TextBlock Text="Formulario de Reserva" 
+                               FontSize="24" 
+                               FontWeight="SemiBold"
+                               Foreground="#FF6D5C4D"
+                               Margin="0,0,0,20"
+                               HorizontalAlignment="Center"/>
+
+                    <!-- Selección de Tour -->
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
+                        <TextBlock Text="Seleccione un tour:" 
+                                   Foreground="#FF6D5C4D"
+                                   FontSize="16"
+                                   VerticalAlignment="Center"
+                                   Width="200"/>
+                        <Border CornerRadius="20" Background="White" Width="300">
+                            <ComboBox x:Name="cmbTours" 
+                                      Height="35" 
+                                      Padding="10,0"
+                                      Background="Transparent"
+                                      BorderThickness="0"
+                                      Foreground="#FF5A4A3A"
+                                      FontSize="15"
+                                      SelectionChanged="cmbTours_SelectionChanged"/>
+                        </Border>
+                    </StackPanel>
+
+                    <!-- Datos del Tour -->
+                    <Border CornerRadius="5" 
+                             Background="#FFF5EDE0" 
+                             Padding="15"
+                             Margin="0,0,0,15">
+                        <StackPanel>
+                            <TextBlock Text="Datos del Tour" 
+                                       FontSize="18" 
+                                       FontWeight="SemiBold"
+                                       Foreground="#FF6D5C4D"
+                                       Margin="0,0,0,10"/>
+
+                            <StackPanel Orientation="Horizontal" Margin="0,5">
+                                <TextBlock Text="Costo del tour:" 
+                                           Foreground="#FF6D5C4D"
+                                           FontSize="16"
+                                           VerticalAlignment="Center"
+                                           Width="200"/>
+                                <Border CornerRadius="20" Background="White" Width="300">
+                                    <TextBox x:Name="txtCostoTour" 
+                                             Height="35" 
+                                             Padding="10,0"
+                                             Background="Transparent"
+                                             BorderThickness="0"
+                                             Foreground="#FF5A4A3A"
+                                             FontSize="15"
+                                             IsReadOnly="True"/>
+                                </Border>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Margin="0,5">
+                                <TextBlock Text="Duración:" 
+                                           Foreground="#FF6D5C4D"
+                                           FontSize="16"
+                                           VerticalAlignment="Center"
+                                           Width="200"/>
+                                <Border CornerRadius="20" Background="White" Width="300">
+                                    <TextBox x:Name="txtDuracion" 
+                                             Height="35" 
+                                             Padding="10,0"
+                                             Background="Transparent"
+                                             BorderThickness="0"
+                                             Foreground="#FF5A4A3A"
+                                             FontSize="15"
+                                             IsReadOnly="True"/>
+                                </Border>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Cantidad de personas -->
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
+                        <TextBlock Text="Cantidad de personas:" 
+                                   Foreground="#FF6D5C4D"
+                                   FontSize="16"
+                                   VerticalAlignment="Center"
+                                   Width="200"/>
+                        <Border CornerRadius="20" Background="White" Width="300">
+                            <TextBox x:Name="txtCantidadPersonas" 
+                                     Height="35" 
+                                     Padding="10,0"
+                                     Background="Transparent"
+                                     BorderThickness="0"
+                                     Foreground="#FF5A4A3A"
+                                     FontSize="15"
+                                     TextChanged="txtCantidadPersonas_TextChanged"/>
+                        </Border>
+                    </StackPanel>
+
+                    <!-- Fechas disponibles -->
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
+                        <TextBlock Text="Fechas disponibles:" 
+                                   Foreground="#FF6D5C4D"
+                                   FontSize="16"
+                                   VerticalAlignment="Center"
+                                   Width="200"/>
+                        <Border CornerRadius="20" Background="White" Width="300">
+                            <ComboBox x:Name="cmbFechas" 
+                                      Height="35" 
+                                      Padding="10,0"
+                                      Background="Transparent"
+                                      BorderThickness="0"
+                                      Foreground="#FF5A4A3A"
+                                      FontSize="15"/>
+                        </Border>
+                    </StackPanel>
+
+                    <!-- Información de Pago -->
+                    <Border CornerRadius="5" 
+                             Background="#FFF5EDE0" 
+                             Padding="15"
+                             Margin="0,0,0,20">
+                        <StackPanel>
+                            <TextBlock Text="Información de Pago" 
+                                       FontSize="18" 
+                                       FontWeight="SemiBold"
+                                       Foreground="#FF6D5C4D"
+                                       Margin="0,0,0,10"/>
+
+                            <StackPanel Orientation="Horizontal" Margin="0,5">
+                                <TextBlock Text="Monto mínimo (30%):" 
+                                           Foreground="#FF6D5C4D"
+                                           FontSize="16"
+                                           VerticalAlignment="Center"
+                                           Width="200"/>
+                                <Border CornerRadius="20" Background="White" Width="300">
+                                    <TextBox x:Name="txtMontoMinimo" 
+                                             Height="35" 
+                                             Padding="10,0"
+                                             Background="Transparent"
+                                             BorderThickness="0"
+                                             Foreground="#FF5A4A3A"
+                                             FontSize="15"
+                                             IsReadOnly="True"/>
+                                </Border>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Margin="0,5">
+                                <TextBlock Text="Monto a pagar:" 
+                                           Foreground="#FF6D5C4D"
+                                           FontSize="16"
+                                           VerticalAlignment="Center"
+                                           Width="200"/>
+                                <Border CornerRadius="20" Background="White" Width="300">
+                                    <TextBox x:Name="txtMontoAPagar" 
+                                             Height="35" 
+                                             Padding="10,0"
+                                             Background="Transparent"
+                                             BorderThickness="0"
+                                             Foreground="#FF5A4A3A"
+                                             FontSize="15"/>
+                                </Border>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Botón de Confirmación -->
+                    <Border CornerRadius="15" 
+                            Width="200"  
+                            Height="50" 
+                            Background="#E3D3C9"
+                            HorizontalAlignment="Center">
+                        <Button x:Name="btnConfirmarReserva" 
+                                Content="Confirmar Reserva"
+                                FontSize="16"
+                                Width="200" 
+                                Height="50"
+                                Background="Transparent"
+                                BorderThickness="0"
+                                Foreground="#FF5A4A3A"
+                                FontWeight="Medium"
+                                Cursor="Hand" 
+                                Click="btnConfirmarReserva_Click"/>
+                    </Border>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </ScrollViewer>
+</Window>

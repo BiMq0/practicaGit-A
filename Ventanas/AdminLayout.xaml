@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="chaski_tours_desk.Ventanas.AdminLayout"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:chaski_tours_desk.Ventanas"
+        xmlns:componentes="clr-namespace:chaski_tours_desk.Componentes.Admin"
+        mc:Ignorable="d"
+        d:Height="720" d:Width="1280" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="280"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <componentes:Dashboard x:Name="Dashboard" Grid.Column="0"/>
+        <componentes:Inicio Visibility="Visible" x:Name="Inicio" Grid.Column="1"/>
+
+        <componentes:Reservas Visibility="Collapsed" x:Name="Reservas" Grid.Column="1"/>
+
+        <componentes:Clientes Visibility="Collapsed" x:Name="Clientes" Grid.Column="1"/>
+
+        <componentes:Tours Visibility="Collapsed" x:Name="Tours" Grid.Column="1"/>
+
+        <componentes:Sitios Visibility="Collapsed" x:Name="Sitios" Grid.Column="1"/>
+
+        <componentes:Transportes Visibility="Collapsed" x:Name="Transportes" Grid.Column="1"/>
+
+        <componentes:Alojamientos Visibility="Collapsed" x:Name="Alojamientos" Grid.Column="1"/>
+        
+        <componentes:Salidas Visibility="Collapsed" x:Name="Salidas" Grid.Column="1"/>
+    </Grid>
+</UserControl>

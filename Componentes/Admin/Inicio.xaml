@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="chaski_tours_desk.Componentes.Admin.Inicio"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:chaski_tours_desk.Componentes"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1280" Loaded="DatosLoaded" >
+
+    <Grid  Background="#FAE4BC"  Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+
+        <Grid  Grid.Row="0" VerticalAlignment="Center" Margin="20, 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label  Content="CHASKI-TOURS" Grid.ColumnSpan="5" Style="{StaticResource Titulo}" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="400" />
+
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Row="1" Grid.RowSpan="8" Source="/Images/icono.png" Grid.Column="2" />
+
+
+            <Label x:Name="titulo" Grid.Row="0" Grid.Column="1"  HorizontalAlignment="Center" Style="{StaticResource Titulo}" />
+
+
+            <Border  Grid.Column="1" Grid.Row="1" Background="{StaticResource BoliviaRed}" CornerRadius="30" Margin="0 10"/>
+            <Border  Grid.Column="1" Grid.Row="2" Background="{StaticResource BoliviaRed}" CornerRadius="30" Margin="0 10"/>
+            <Border  Grid.Column="1" Grid.Row="3" Background="{StaticResource BoliviaRed}" CornerRadius="30" Margin="0 10" />
+            <Border  Grid.Column="1" Grid.Row="4" Background="{StaticResource BoliviaRed}" CornerRadius="30" Margin="0 10"/>
+            <Border  Grid.Column="1" Grid.Row="5" Background="{StaticResource BoliviaRed}" CornerRadius="30" Margin="0 10"/>
+            <Border  Grid.Column="1" Grid.Row="6" Background="{StaticResource BoliviaRed}" CornerRadius="30" Margin="0 10"/>
+            <Border  Grid.Column="1" Grid.Row="7" Background="{StaticResource BoliviaRed}" CornerRadius="30" Margin="0 10"/>
+            <Border  Grid.Column="1" Grid.Row="8" Background="{StaticResource BoliviaRed}" CornerRadius="30" Margin="0 10"/>
+
+            <Label x:Name="lbl_alojamientos"  Grid.Row="1" Grid.Column="1"  Content="Total de Alojamientos Registrados:" FontSize="30" HorizontalAlignment="Center" Margin="40 5" Foreground="White"
+              />
+            <Label x:Name="lbl_clientes" Grid.Column="1" Grid.Row="2" Content="Total de Clientes Registrados:" FontSize="30" HorizontalAlignment="Center" Margin="40 5" Foreground="White"/>
+            <Label x:Name="lbl_reservas" Grid.Column="1" Grid.Row="3" Content="Total de Reservas Registradas:" FontSize="30" HorizontalAlignment="Center" Margin="40 5" Foreground="White"/>
+            <Label x:Name="lbl_sitios" Grid.Column="1" Grid.Row="4" Content="Total de Sitios Registrados:" FontSize="30" HorizontalAlignment="Center" Margin="40 5" Foreground="White"/>
+            <Label x:Name="lbl_tours" Grid.Column="1" Grid.Row="5"  Content="Total de Tours Registrados:" FontSize="30" HorizontalAlignment="Center" Margin="40 5" Foreground="White"/>
+            <Label x:Name="lbl_transporte" Grid.Column="1" Grid.Row="6" Content="Total de Transportes Registrados:" FontSize="30" HorizontalAlignment="Center" Margin="40 5" Foreground="White"/>
+            <Label x:Name="lbl_cantturistas" Grid.Column="1" Grid.Row="7" Content="Total de Turistas Registrados:" FontSize="30" HorizontalAlignment="Center" Margin="40 5" Foreground="White"/>
+            <Label x:Name="lbl_cantinstituciones" Grid.Column="1" Grid.Row="8" Content="Total de Instituciones Registrados:" FontSize="30" HorizontalAlignment="Center" Margin="40 5" Foreground="White"/>
+        </Grid>
+    </Grid>
+</UserControl>

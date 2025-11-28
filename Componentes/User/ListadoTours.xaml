@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="chaski_tours_desk.Componentes.User.ListadoTours"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:chaski_tours_desk.Componentes.User"
+             xmlns:navbar="clr-namespace:chaski_tours_desk.Componentes.User"
+             mc:Ignorable="d" 
+                                      d:DesignHeight="720" d:DesignWidth="1280" Loaded="UserControl_Loaded">
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Hidden">
+            <StackPanel>
+                <StackPanel  VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 88" Orientation="Vertical">
+                    <Grid>
+                        <Image Source="/Images/icono.png" Width="250"/>
+                        <Image Source="/Images/titulo_blanco.png" Width="1000">
+                            <Image.Effect>
+                                <DropShadowEffect BlurRadius="10" Opacity="0.5" ShadowDepth="3"/>
+                            </Image.Effect>
+                        </Image>
+                    </Grid>
+                    <Grid Margin="0,0,0,30">
+                        <navbar:navbar x:Name="navbar" HorizontalAlignment="Center"/>
+                    </Grid>
+                </StackPanel>
+
+                <StackPanel x:Name="stackMain">
+                </StackPanel>
+
+            </StackPanel>
+        </ScrollViewer>
+
+    </Grid>
+</UserControl>
+
+

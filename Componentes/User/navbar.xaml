@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="chaski_tours_desk.Componentes.User.navbar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:chaski_tours_desk.Componentes.User"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+        <StackPanel >
+            <Viewbox Width="50" Height="80" Margin="40 0">
+                <Grid MouseLeftButtonDown="Grid_InicioEvento">
+                    <Path Data="M575.8 255.5c0 18-15 32.1-32 32.1l-32 0 .7 160.2c0 2.7-.2 5.4-.5 8.1l0 16.2c0 22.1-17.9 40-40 40l-16 0c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1L416 512l-24 0c-22.1 0-40-17.9-40-40l0-24 0-64c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32l0 64 0 24c0 22.1-17.9 40-40 40l-24 0-31.9 0c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2l-16 0c-22.1 0-40-17.9-40-40l0-112c0-.9 0-1.9 .1-2.8l0-69.7-32 0c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z" Fill="{StaticResource BoliviaLightGreen}" x:Name="homeIcon" Cursor="Hand"/>
+                </Grid>
+            </Viewbox>
+            <TextBlock Text="Inicio" Style="{StaticResource SubtitleTXB}" Foreground="{StaticResource BoliviaLightGreen}" HorizontalAlignment="Center" x:Name="homeIconText"/>
+        </StackPanel>
+        <!-- Primer elemento (original) -->
+        <StackPanel>
+            <Grid MouseLeftButtonDown="Grid_ToursEvento">
+                <Viewbox Width="50" Height="80" Margin="40 0">
+                    <Path Data="M48 0C21.5 0 0 21.5 0 48L0 368c0 26.5 21.5 48 48 48l16 0c0 53 43 96 96 96s96-43 96-96l128 0c0 53 43 96 96 96s96-43 96-96l32 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l0-64 0-32 0-18.7c0-17-6.7-33.3-18.7-45.3L512 114.7c-12-12-28.3-18.7-45.3-18.7L416 96l0-48c0-26.5-21.5-48-48-48L48 0zM416 160l50.7 0L544 237.3l0 18.7-128 0 0-96zM112 416a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm368-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" Fill="White" x:Name="toursIcon" Cursor="Hand"/>
+                </Viewbox>
+            </Grid>
+            <TextBlock Text="Tours" Style="{StaticResource SubtitleTXB}" Foreground="White" HorizontalAlignment="Center" x:Name="toursIconText"/>
+        </StackPanel>
+
+        <!-- Cuarto elemento (ubicación) -->
+        <StackPanel>
+            <Grid MouseLeftButtonDown="Grid_SitioEvento">
+                <Viewbox Width="50" Height="80" Margin="40 0">
+                    <Path Data="M408 120c0 54.6-73.1 151.9-105.2 192c-7.7 9.6-22 9.6-29.6 0C241.1 271.9 168 174.6 168 120C168 53.7 221.7 0 288 0s120 53.7 120 120zm8 80.4c3.5-6.9 6.7-13.8 9.6-20.6c.5-1.2 1-2.5 1.5-3.7l116-46.4C558.9 123.4 576 135 576 152l0 270.8c0 9.8-6 18.6-15.1 22.3L416 503l0-302.6zM137.6 138.3c2.4 14.1 7.2 28.3 12.8 41.5c2.9 6.8 6.1 13.7 9.6 20.6l0 251.4L32.9 502.7C17.1 509 0 497.4 0 480.4L0 209.6c0-9.8 6-18.6 15.1-22.3l122.6-49zM327.8 332c13.9-17.4 35.7-45.7 56.2-77l0 249.3L192 449.4 192 255c20.5 31.3 42.3 59.6 56.2 77c20.5 25.6 59.1 25.6 79.6 0zM288 152a40 40 0 1 0 0-80 40 40 0 1 0 0 80z" Fill="White" x:Name="siteIcon" Cursor="Hand"/>
+                </Viewbox>
+            </Grid>
+            <TextBlock Text="Sitios" Style="{StaticResource SubtitleTXB}" Foreground="White" HorizontalAlignment="Center" x:Name="siteIconText"/>
+        </StackPanel>
+
+        <StackPanel>
+            <Viewbox Width="50" Height="80" Margin="40 0">
+                <Grid MouseLeftButtonDown="Grid_CiudadesEvento">
+                    <Path Data="M480 48c0-26.5-21.5-48-48-48L336 0c-26.5 0-48 21.5-48 48l0 48-64 0 0-72c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 72-64 0 0-72c0-13.3-10.7-24-24-24S64 10.7 64 24l0 72L48 96C21.5 96 0 117.5 0 144l0 96L0 464c0 26.5 21.5 48 48 48l256 0 32 0 96 0 160 0c26.5 0 48-21.5 48-48l0-224c0-26.5-21.5-48-48-48l-112 0 0-144zm96 320l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16l32 0c8.8 0 16 7.2 16 16zM240 416l-32 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16zM128 400c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16l32 0c8.8 0 16 7.2 16 16l0 32zM560 256c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16l32 0zM256 176l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16l32 0c8.8 0 16 7.2 16 16zM112 160c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16l32 0zM256 304c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16l32 0c8.8 0 16 7.2 16 16l0 32zM112 320l-32 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16l32 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16zm304-48l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16l32 0c8.8 0 16 7.2 16 16zM400 64c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16l32 0zm16 112l0 32c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-32c0-8.8 7.2-16 16-16l32 0c8.8 0 16 7.2 16 16z" Fill="White" x:Name="cityIcon"  Cursor="Hand"/>
+                </Grid>
+            </Viewbox>
+            <TextBlock Text="Ciudades" Style="{StaticResource SubtitleTXB}" Foreground="White" HorizontalAlignment="Center" x:Name="cityIconText" Cursor="Hand"/>
+        </StackPanel>
+
+        <!-- Quinto elemento (menú hamburguesa) -->
+        <StackPanel>
+            <Grid MouseLeftButtonDown="Grid_CategoriaEvento">
+                <Viewbox Width="40" Height="80" Margin="40 0">
+                    <Path Data="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" Fill="White" x:Name="categoryIcon"/>
+                </Viewbox>
+            </Grid>
+            <TextBlock Text="Categorías" Style="{StaticResource SubtitleTXB}" Foreground="White" HorizontalAlignment="Center" x:Name="categoryIconText"/>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

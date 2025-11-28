@@ -1,0 +1,155 @@
+﻿<Window x:Class="chaski_tours_desk.Componentes.Admin.FormsInfo.InfoTour"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:chaski_tours_desk.Componentes.Admin.FormsInfo"
+        mc:Ignorable="d"
+        Title="Información del Tour"         
+        Height="720" 
+        Width="1080">
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Style="{StaticResource BordeForms}">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <Border Background="#D32F2F" CornerRadius="10" Padding="15" Margin="0,0,0,15">
+                        <TextBlock x:Name="txbNombreTour"
+                                   Foreground="White"
+                                   FontSize="24"
+                                   FontWeight="Bold"
+                                   TextWrapping="Wrap"
+                                   />
+                    </Border>
+                    <TextBlock x:Name="hiddenId" Visibility="Hidden"/>
+               
+                    <Border BorderBrush="#F44336" BorderThickness="0,1" Padding="0,10" Margin="0,0,0,15">
+                        <StackPanel>
+                            <TextBlock Text="Descripción del Tour" Style="{StaticResource SubtitleTXB}" />
+                            <TextBox x:Name="txbDescTour"
+                                     Style="{StaticResource TextoEditableTXB}"
+                                     MinHeight="80"
+                                     TextWrapping="Wrap"
+                                     AcceptsReturn="True"
+                                     IsReadOnly="True"/>
+                        </StackPanel>
+                    </Border>
+                    <StackPanel Margin="0,0,0,15">
+                        <TextBlock Text="Costo del Tour" Style="{StaticResource SubtitleTXB}" />
+                        <TextBox x:Name="txbCostoTour"
+                                 Style="{StaticResource TextoEditableTXB}"
+                                 IsReadOnly="True"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="0,0,0,15">
+                        <TextBlock Text="Duración" Style="{StaticResource SubtitleTXB}" />
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,0,0,0">
+                            <TextBox x:Name="txbDias" Width="40" Style="{StaticResource TextoEditableTXB}" IsReadOnly="True"/>
+                            <TextBlock Text="Día(s)  y " VerticalAlignment="Center" Margin="5,0" Style="{StaticResource SubtitleTXB}"/>
+                            <TextBox x:Name="txbNoches" Width="40" Style="{StaticResource TextoEditableTXB}" IsReadOnly="True"/>
+                            <TextBlock Text="Noche(s)" VerticalAlignment="Center" Style="{StaticResource SubtitleTXB}"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Margin="0,0,0,15">
+                        <TextBlock Text="Estado" Style="{StaticResource SubtitleTXB}" />
+                        <ComboBox x:Name="cmbActivo"
+                                  IsEnabled="False"
+                                  Margin="10"
+                                  Style="{StaticResource Selector}"
+                                  SelectedIndex="1">
+                            <ComboBoxItem Content="Inactivo"/>
+                            <ComboBoxItem Content="Activo"/>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Border x:Name="brdEditar" Style="{StaticResource BordeBotonesSecundarios}">
+                            <Button x:Name="btnEditarSitio" 
+                                Content="Editar" 
+                                Click="btnEditarSitio_Click"
+                                Style="{StaticResource TertiaryButtonStyle}"
+                                
+                                Cursor="Hand"/>
+                        </Border>
+
+                        <Border x:Name="brdEliminar" Style="{StaticResource BordeBotones}">
+                            <Button x:Name="btnEliminarSitio" 
+                                Style="{StaticResource SecondaryButtonStyle}"
+                                    Content="Eliminar"
+                                    Click="btnEliminarSitio_Click"
+                                
+                                Cursor="Hand"/>
+                        </Border>
+
+                        <Border x:Name="brdBtnVolver" Style="{StaticResource BordeBotones}">
+                            <Button x:Name="btnVolver"
+                                Style="{StaticResource SecondaryButtonStyle}"
+                                Click="btnCerrar_Click"
+                                Content="Volver"
+                                Cursor="Hand"/>
+                        </Border>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+
+      
+        <Border Grid.Column="1" Style="{StaticResource BordeForms}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0" Background="#D32F2F" CornerRadius="10" Padding="15" Margin="0,0,0,15">
+                    <TextBlock Text="Detalles de las rutas" Foreground="White" Style="{StaticResource TituloTXB}" />
+                </Border>
+
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <StackPanel>
+                            <TextBlock Text="Sitio Inicial" Style="{StaticResource SubtitleTXB}" />
+                            <TextBox x:Name="txbSitioInicial" 
+                             Style="{StaticResource TextoEditableTXB}"
+                             IsReadOnly="True"/>
+                            <ComboBox x:Name="cmbSitioInicio"
+                              Style="{StaticResource Selector}"
+                              DisplayMemberPath="nombre"
+                              SelectedValuePath="id_sitio"
+                              Visibility="Collapsed"
+                              IsEnabled="False"/>
+                        </StackPanel>
+
+                        <StackPanel>
+                            <TextBlock Text="Sitio Final" Style="{StaticResource SubtitleTXB}" />
+                            <TextBox x:Name="txbSitioFinal" 
+                             Style="{StaticResource TextoEditableTXB}"
+                             IsReadOnly="True"/>
+                            <ComboBox x:Name="cmbSitioFin"
+                              Style="{StaticResource Selector}"
+                              DisplayMemberPath="nombre"
+                              SelectedValuePath="id_sitio"
+                              Visibility="Collapsed"
+                              IsEnabled="False"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBlock Text="Alojamiento" Style="{StaticResource SubtitleTXB}" />
+                            <TextBox x:Name="txbAlojamiento" 
+                             Style="{StaticResource TextoEditableTXB}"
+                             IsReadOnly="True"/>
+                            <ComboBox x:Name="cmbAlojamiento"
+                              Style="{StaticResource Selector}"
+                              DisplayMemberPath="nombre_aloj"
+                              SelectedValuePath="id_alojamiento"
+                              Visibility="Collapsed"
+                              IsEnabled="False"/>
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

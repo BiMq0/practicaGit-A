@@ -1,0 +1,377 @@
+﻿<UserControl x:Class="chaski_tours_desk.Componentes.SignUp"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d">
+    <Grid>
+        <Border Height="600" 
+            CornerRadius="5"
+            BorderThickness="0"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"                     
+            Background="#FFF5EDE0">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="0" 
+              Color="#FF7D7D7D" 
+              Opacity="0.3" 
+              BlurRadius="15"
+              Direction="270"/>
+            </Border.Effect>
+
+            <StackPanel Orientation="Horizontal">
+
+                <StackPanel Height="400" Width="300" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20, 0">
+                    <Border CornerRadius="120"  Width="300" Height="300" >
+                        <Image Source="/Images/icono.png" >
+                            <Image.Clip>
+                                <EllipseGeometry Center="150,150" RadiusX="150" RadiusY="150"/>
+                            </Image.Clip>
+                        </Image>
+                    </Border>
+
+                    <Image Source="/Images/titulo.png"/>
+                </StackPanel>
+
+                <!-- Panel de formulario -->
+                <StackPanel VerticalAlignment="Center" 
+                      HorizontalAlignment="Center" 
+                      Width="400" Height="550" Margin="20, 0">
+                    <TextBlock Text="Registro"
+                          FontSize="30" 
+                          FontWeight="SemiBold"
+                          Foreground="#FF6D5C4D"
+                          HorizontalAlignment="Center"/>
+
+                    <!-- Selector de tipo de usuario -->
+                    <TextBlock Text="Tipo de usuario" 
+                         Foreground="#FF6D5C4D"
+                         Margin="5,5,5,0"
+                         FontSize="18"/>
+                    <ComboBox x:Name="cmbTipoUsuario" 
+                        Height="35" 
+                        Margin="0,5"
+                        SelectedIndex="0"
+                              FontSize="16"
+                              VerticalContentAlignment="Center"
+                              HorizontalContentAlignment="Center"
+                              Foreground="#FF6D5C4D"
+                              SelectionChanged="cbTipoUsuario_SelectionChanged">
+                        <ComboBoxItem Content="Turista"/>
+                        <ComboBoxItem Content="Institución"/>
+                    </ComboBox>
+
+
+                    <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                   x:Name="panelCamposTurista" Height="300" >
+
+                        <StackPanel
+                            Visibility="Visible">
+                            <!-- Campos para Turista -->
+                            <TextBlock Text="Documento" 
+                                   Foreground="#FF6D5C4D"
+                                   Margin="5,15,5,0"
+                                   FontSize="18"/>
+                            <Border x:Name="brdDocumento" CornerRadius="20" Background="White">
+                                <TextBox x:Name="txtDocumento" 
+                                    Height="35" 
+                                    Padding="10,0"
+                                    Background="Transparent"
+                                    BorderThickness="0"
+                                    Foreground="#FF5A4A3A"
+                                    FontSize="15"
+                                    VerticalContentAlignment="Center"/>
+                            </Border>
+
+                            <TextBlock Text="Nombres" 
+                                   Foreground="#FF6D5C4D"
+                                   Margin="5,15,5,0"
+                                   FontSize="18"/>
+                            <Border x:Name="brdNombres" CornerRadius="20" Background="White">
+                                <TextBox x:Name="txtNombres" 
+                                    Height="35" 
+                                    Padding="10,0"
+                                    Background="Transparent"
+                                    BorderThickness="0"
+                                    Foreground="#FF5A4A3A"
+                                    FontSize="15"
+                                    VerticalContentAlignment="Center"/>
+                            </Border>
+
+                            <TextBlock Text="Apellido Paterno" 
+                                   Foreground="#FF6D5C4D"
+                                   Margin="5,15,5,0"
+                                   FontSize="18"/>
+                            <Border
+                                x:Name="brdApPat" CornerRadius="20" Background="White">
+                                <TextBox x:Name="txtApellidoPaterno" 
+                                    Height="35" 
+                                    Padding="10,0"
+                                    Background="Transparent"
+                                    BorderThickness="0"
+                                    Foreground="#FF5A4A3A"
+                                    FontSize="15"
+                                    VerticalContentAlignment="Center"/>
+                            </Border>
+
+                            <TextBlock Text="Apellido Materno" 
+                                   Foreground="#FF6D5C4D"
+                                   Margin="5,15,5,0"
+                                   FontSize="18"/>
+                            <Border x:Name="brdApMat" CornerRadius="20" Background="White">
+                                <TextBox x:Name="txtApellidoMaterno" 
+                                    Height="35" 
+                                    Padding="10,0"
+                                    Background="Transparent"
+                                    BorderThickness="0"
+                                    Foreground="#FF5A4A3A"
+                                    FontSize="15"
+                                    VerticalContentAlignment="Center"/>
+                            </Border>
+
+                            <TextBlock Text="Fecha de Nacimiento" 
+                                   Foreground="#FF6D5C4D"
+                                   Margin="5,15,5,0"
+                                   FontSize="18"/>
+                            <DatePicker x:Name="dpFechaNacimiento"
+                                   Height="35"
+                                   Margin="0,5"
+                                   BorderThickness="0"
+                                   Background="White"
+                                   Foreground="#FF5A4A3A"/>
+
+                            <TextBlock Text="Nacionalidad" 
+                                   Foreground="#FF6D5C4D"
+                                   Margin="5,15,5,0"
+                                   FontSize="18"/>
+                            <ComboBox x:Name="cbNacionalidadTurista" 
+                                Height="35" 
+                                Margin="0,5">
+                                <ComboBoxItem Content="Perú"/>
+                                <ComboBoxItem Content="Argentina"/>
+                                <ComboBoxItem Content="Chile"/>
+                                <ComboBoxItem Content="Colombia"/>
+                                <ComboBoxItem Content="México"/>
+                                <ComboBoxItem Content="España"/>
+                            </ComboBox>
+
+                            <TextBlock Text="Teléfono" 
+                                   Foreground="#FF6D5C4D"
+                                   Margin="5,15,5,0"
+                                   FontSize="18"/>
+                            <Border x:Name="brdTelefono" CornerRadius="20" Background="White">
+                                <TextBox x:Name="txtTelefonoTurista" 
+                                    Height="35" 
+                                    Padding="10,0"
+                                    Background="Transparent"
+                                    BorderThickness="0"
+                                    Foreground="#FF5A4A3A"
+                                    FontSize="15"
+                                    VerticalContentAlignment="Center"/>
+                            </Border>
+
+
+
+                            <TextBlock Text="Correo electrónico" 
+                                   Foreground="#FF6D5C4D"
+                                   Margin="5,15,5,0"
+                                   FontSize="18"/>
+                            <Border x:Name="brdCorreo" CornerRadius="20" Background="White">
+                                <TextBox x:Name="txtCorreoTurista" 
+                                    Height="35" 
+                                    Padding="10,0"
+                                    Background="Transparent"
+                                    BorderThickness="0"
+                                    Foreground="#FF5A4A3A"
+                                    FontSize="15"
+                                    VerticalContentAlignment="Center"/>
+                            </Border>
+
+                            <TextBlock Text="Contraseña" 
+                                   Foreground="#FF6D5C4D"
+                                   Margin="5,15,5,0"
+                                   FontSize="18"/>
+                            <Border x:Name="brdPassword" CornerRadius="20" Background="White">
+                                <PasswordBox x:Name="txtPasswordTurista" 
+                                       Height="35" 
+                                       Padding="10,0"   VerticalContentAlignment="Center"
+                                       FontSize="15"
+                                       Background="Transparent"
+                                       BorderThickness="0"/>
+                            </Border>
+                        </StackPanel>
+
+
+                    </ScrollViewer>
+
+                    <ScrollViewer x:Name="panelCamposInstitucion" Height="300" Visibility="Collapsed" Margin="0, 10">
+                        <StackPanel  >
+                            <!-- Campos para Institución -->
+                            <TextBlock Text="Nombre de la empresa" 
+   Foreground="#FF6D5C4D"
+   Margin="5,15,5,0"
+   FontSize="18"/>
+                            <Border x:Name="brdNomEmpresa" CornerRadius="20" Background="White">
+                                <TextBox x:Name="txtNombreEmpresa" 
+    Height="35" 
+    Padding="10,0"
+    Background="Transparent"
+    BorderThickness="0"
+    Foreground="#FF5A4A3A"
+    FontSize="15"
+    VerticalContentAlignment="Center"/>
+                            </Border>
+
+                            <TextBlock Text="Nacionalidad" 
+   Foreground="#FF6D5C4D"
+   Margin="5,15,5,0"
+   FontSize="18"/>
+                            <ComboBox x:Name="cmbNacionalidadInstitucion" 
+Height="35" 
+Margin="0,5">
+                                <ComboBoxItem Content="Perú"/>
+                                <ComboBoxItem Content="Argentina"/>
+                                <ComboBoxItem Content="Chile"/>
+                                <ComboBoxItem Content="Colombia"/>
+                                <ComboBoxItem Content="México"/>
+                                <ComboBoxItem Content="España"/>
+                            </ComboBox>
+
+                            <TextBlock Text="Teléfono" 
+   Foreground="#FF6D5C4D"
+   Margin="5,15,5,0"
+   FontSize="18"/>
+                            <Border
+                                x:Name="brdTelEmpresa" CornerRadius="20" Background="White">
+                                <TextBox x:Name="txtTelefonoInstitucion" 
+    Height="35" 
+    Padding="10,0"
+    Background="Transparent"
+    BorderThickness="0"
+    Foreground="#FF5A4A3A"
+    FontSize="15"
+    VerticalContentAlignment="Center"/>
+                            </Border>
+
+                            <TextBlock Text="Correo electrónico" 
+   Foreground="#FF6D5C4D"
+   Margin="5,15,5,0"
+   FontSize="18"/>
+                            <Border x:Name="brdCorreoEmpresa" CornerRadius="20" Background="White">
+                                <TextBox x:Name="txtCorreoInstitucion" 
+    Height="35" 
+    Padding="10,0"
+    Background="Transparent"
+    BorderThickness="0"
+    Foreground="#FF5A4A3A"
+    FontSize="15"
+    VerticalContentAlignment="Center"/>
+                            </Border>
+
+                            <TextBlock Text="Contraseña" 
+   Foreground="#FF6D5C4D"
+   Margin="5,15,5,0"
+   FontSize="18"/>
+                            <Border x:Name="brdPassEmpresa" CornerRadius="20" Background="White">
+                                <PasswordBox x:Name="txtPasswordInstitucion" 
+       Height="35" 
+       Padding="10,0"
+       VerticalContentAlignment="Center"
+       FontSize="15"
+       Background="Transparent"
+       BorderThickness="0"/>
+                            </Border>
+
+
+                            <TextBlock Text="Nombre de Representante" 
+Foreground="#FF6D5C4D"
+Margin="5,15,5,0"
+FontSize="18"/>
+                            <Border x:Name="brdNomRep" CornerRadius="20" Background="White">
+                                <TextBox x:Name="txtNomRep" 
+Height="35" 
+Padding="10,0"
+Background="Transparent"
+BorderThickness="0"
+Foreground="#FF5A4A3A"
+FontSize="15"
+VerticalContentAlignment="Center"/>
+                            </Border>
+
+                            <TextBlock Text="Apellido de Representante" 
+Foreground="#FF6D5C4D"
+Margin="5,15,5,0"
+FontSize="18"/>
+                            <Border x:Name="brdApRep" CornerRadius="20" Background="White">
+                                <TextBox x:Name="txtApRep" 
+Height="35" 
+Padding="10,0"
+Background="Transparent"
+BorderThickness="0"
+Foreground="#FF5A4A3A"
+FontSize="15"
+VerticalContentAlignment="Center"/>
+                            </Border>
+
+                            <TextBlock Text="Correo de Representante" 
+Foreground="#FF6D5C4D"
+Margin="5,15,5,0"
+FontSize="18"/>
+                            <Border x:Name="brdEmailRep" CornerRadius="20" Background="White">
+                                <TextBox x:Name="txtEmailRep" 
+Height="35" 
+Padding="10,0"
+Background="Transparent"
+BorderThickness="0"
+Foreground="#FF5A4A3A"
+FontSize="15"
+VerticalContentAlignment="Center"/>
+                            </Border>
+
+                            <TextBlock Text="Teléfono de Representante" 
+Foreground="#FF6D5C4D"
+Margin="5,15,5,0"
+FontSize="18"/>
+                            <Border x:Name="brdTelRep" CornerRadius="20" Background="White">
+                                <TextBox x:Name="txtTelRep" 
+Height="35" 
+Padding="10,0"
+Background="Transparent"
+BorderThickness="0"
+Foreground="#FF5A4A3A"
+FontSize="15"
+VerticalContentAlignment="Center"/>
+                            </Border>
+                        </StackPanel>
+                    </ScrollViewer>
+
+                    <Border CornerRadius="15" Width="120" Height="50" Margin="0,15,0,0" Background="#E3D3C9">
+                        <Button x:Name="btnRegistrar" 
+                            Content="Registrarse"
+                            FontSize="14"
+                            Width="120" 
+                            Height="50" 
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="#FF5A4A3A"
+                            FontWeight="Medium"
+                            Cursor="Hand" Click="btnRegistrar_Click"/>
+                    </Border>
+
+                    <TextBlock 
+HorizontalAlignment="Center"
+Margin="0,15,0,0"
+ Cursor="Hand"
+ FontSize="14"
+       
+Foreground="#FF8A7866"
+TextDecorations="Underline"
+           >
+     <Button x:Name="btnLogin" Content="¿Tienes una cuenta? Inicia Sesion" Background="Transparent" BorderThickness="0" />
+                    </TextBlock>
+                </StackPanel>
+
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

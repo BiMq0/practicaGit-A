@@ -1,0 +1,32 @@
+﻿<Window x:Class="chaski_tours_desk.MainWindow" WindowState="Maximized"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:componentes="clr-namespace:chaski_tours_desk.Componentes"
+        xmlns:ventanas="clr-namespace:chaski_tours_desk.Ventanas"
+    mc:Ignorable="d"
+        Title="MainWindow" Height="720" Width="1280" Loaded="Window_Loaded">
+    <Grid>
+
+        <Image x:Name="Fondo" Source="/Images/fondoApp.jpeg" Stretch="UniformToFill"
+           VerticalAlignment="Center"/>
+        <Rectangle Fill="Black" Opacity=".5" />
+
+        <!--Vista final-->
+        
+        <ventanas:UserLayout x:Name="usuario" Visibility="Visible"/>
+        <ventanas:LogSignWindow x:Name="logSign" Visibility="Collapsed">
+        </ventanas:LogSignWindow>
+        <ventanas:AdminLayout
+    x:Name="admin" Visibility="Collapsed"/>
+
+        <!--Vista directa al administrador-->
+
+        <!--<ventanas:UserLayout x:Name="usuario" Visibility="Collapsed"/>
+        <ventanas:LogSignWindow x:Name="logSign" Visibility="Collapsed">
+        </ventanas:LogSignWindow>
+        <ventanas:AdminLayout
+x:Name="admin" Visibility="Visible"/>-->
+    </Grid>
+</Window>

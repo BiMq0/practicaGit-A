@@ -1,0 +1,263 @@
+﻿<UserControl x:Class="chaski_tours_desk.Componentes.User.DatosSitio"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:chaski_tours_desk.Componentes.User"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1280" d:Background="{StaticResource BoliviaLightGreen}">
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Columna izquierda - Información del sitio -->
+        <Border Style="{StaticResource BordeForms}">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <!-- Encabezado con nombre del sitio -->
+                    <Border Background="{StaticResource BoliviaDarkGreen}" CornerRadius="10" Padding="15" Margin="0,0,0,15">
+                        <TextBlock x:Name="txbNombreSitio" 
+                                Foreground="White"
+                                FontSize="24"
+                                FontWeight="Bold"
+                                TextWrapping="Wrap"/>
+                    </Border>
+
+                    <TextBlock x:Name="hiddenId" Visibility="Hidden"/>
+
+                    <!-- Sección de descripciones -->
+                    <Border BorderBrush="{StaticResource BoliviaDarkGreen}" BorderThickness="0,1" Padding="0,10" Margin="0,0,0,15">
+                        <StackPanel>
+                            <TextBlock Text="Descripción Conceptual" 
+                                       Foreground="{StaticResource BoliviaDarkGreen}"
+                                    Style="{StaticResource SubtitleTXB}"
+                                       
+                                    />
+                            <TextBox x:Name="txbDescConceptual" 
+                                  Style="{StaticResource TextoEditableTXB}"
+                                  MinHeight="80"
+                                  TextWrapping="Wrap"
+                                  AcceptsReturn="True"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border BorderBrush="{StaticResource BoliviaDarkGreen}" BorderThickness="0,1" Padding="0,10" Margin="0,0,0,15">
+                        <StackPanel>
+                            <TextBlock Text="Descripción Histórica" 
+                                       Foreground="{StaticResource BoliviaDarkGreen}"
+                                    Style="{StaticResource SubtitleTXB}"
+                                    />
+                            <TextBox x:Name="txbDescHistorica" 
+                                  Style="{StaticResource TextoEditableTXB}"
+                                  MinHeight="80"
+                                  TextWrapping="Wrap"
+                                  AcceptsReturn="True"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Sección de información práctica -->
+                    <Grid Margin="0,0,0,15">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0">
+                            <TextBlock Text="Costo del Sitio" 
+                                       Foreground="{StaticResource BoliviaDarkGreen}"
+                                    Style="{StaticResource SubtitleTXB}"
+                                    />
+                            <TextBox x:Name="txbCostoSitio" 
+                                     Foreground="{StaticResource BoliviaDarkGreen}"
+                                  Style="{StaticResource TextoEditableTXB}"/>
+
+                            <TextBlock Text="Temporada" 
+                                       Foreground="{StaticResource BoliviaDarkGreen}"
+                                    Style="{StaticResource SubtitleTXB}"
+                                    
+                                    />
+                            <ComboBox x:Name="cmbTemporada" 
+                                      Foreground="{StaticResource BoliviaDarkGreen}"
+                                  Style="{StaticResource Selector}" Margin="10 0">
+                                <ComboBoxItem Content="Primavera"/>
+                                <ComboBoxItem Content="Verano"/>
+                                <ComboBoxItem Content="Otoño"/>
+                                <ComboBoxItem Content="Invierno"/>
+                            </ComboBox>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1" >
+                            <TextBlock Text="Horario" 
+                                       Foreground="{StaticResource BoliviaDarkGreen}"
+                                    Style="{StaticResource SubtitleTXB}"
+                                    />
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                                <ComboBox x:Name="cmbApertura" 
+                                       Style="{StaticResource Selector}"
+                                       Width="100"/>
+                                <TextBlock Text=" a " VerticalAlignment="Center" Margin="5,0"/>
+                                <ComboBox x:Name="cmbCierre" 
+                                       Style="{StaticResource Selector}"
+                                       Width="100"/>
+                            </StackPanel>
+
+                            <TextBlock Text="Estado" 
+                                       Foreground="{StaticResource BoliviaDarkGreen}"
+                                    Style="{StaticResource SubtitleTXB}"
+                                    
+                                    />
+                            <ComboBox x:Name="cmbActivo" 
+                                   IsEnabled="False" 
+                                   SelectedIndex="1" 
+                                   Style="{StaticResource Selector}">
+                                <ComboBoxItem Content="Inactivo"/>
+                                <ComboBoxItem Content="Activo"/>
+                            </ComboBox>
+                        </StackPanel>
+                    </Grid>
+
+                    <!-- Recomendaciones -->
+                    <Border BorderBrush="{StaticResource BoliviaDarkGreen}" BorderThickness="0,1" Padding="0,10" Margin="0,0,0,20">
+                        <StackPanel>
+                            <TextBlock Text="Recomendaciones" 
+                                       Foreground="{StaticResource BoliviaDarkGreen}"
+                                    Style="{StaticResource SubtitleTXB}"
+                                    />
+                            <TextBox x:Name="txbRecomendacion" 
+                                  Style="{StaticResource TextoEditableTXB}"
+                                  MinHeight="60"
+                                  TextWrapping="Wrap"
+                                  AcceptsReturn="True"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Botones de acción -->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Border x:Name="brdBtnVolver" Style="{StaticResource BordeBotones}">
+                            <Button x:Name="btnVolver"
+                                    Style="{StaticResource SecondaryButtonStyle}"
+                                    Content="Volver"
+                                    Click="btnCerrar_Click"
+                                    Cursor="Hand"/>
+                        </Border>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+
+        <!-- Columna derecha - Mapa y ubicación -->
+        <Border Grid.Column="1" 
+             Style="{StaticResource BordeForms}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Detalles de ubicación -->
+                <Border Grid.Row="0" 
+                     Background="{StaticResource BoliviaDarkGreen}" 
+                     CornerRadius="10" 
+                     Padding="15"
+                     Margin="0,0,0,15">
+                    <TextBlock Text="Detalles de Ubicación" 
+                            Foreground="White"
+                            FontSize="18"
+                            FontWeight="Bold"/>
+                </Border>
+
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <TextBlock x:Name="hiddenIdUbi" Visibility="Hidden"/>
+
+                        <Grid Margin="0,0,0,15">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0">
+                                <TextBlock Text="Departamento" 
+                                           Foreground="{StaticResource BoliviaDarkGreen}"
+                                        Style="{StaticResource SubtitleTXB}"
+                                        />
+                                <ComboBox x:Name="cmbDepartamento" 
+      Style="{StaticResource Selector}" Margin="0 10 0 0"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                                <TextBlock Text="Municipio" 
+                                           Foreground="{StaticResource BoliviaDarkGreen}"
+                                        Style="{StaticResource SubtitleTXB}"
+                                        />
+                                <TextBox x:Name="txbMunicipio" 
+                                      Style="{StaticResource TextoEditableTXB}"/>
+                            </StackPanel>
+                        </Grid>
+
+                        <Grid Margin="0,0,0,15">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0">
+                                <TextBlock Text="Zona" 
+                                           Foreground="{StaticResource BoliviaDarkGreen}"
+                                        Style="{StaticResource SubtitleTXB}"
+                                        />
+                                <TextBox x:Name="txbZona" 
+                                      Style="{StaticResource TextoEditableTXB}"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                                <TextBlock Text="Calle" 
+                                           Foreground="{StaticResource BoliviaDarkGreen}"
+                                        Style="{StaticResource SubtitleTXB}"
+                                        />
+                                <TextBox x:Name="txbCalle" 
+                                      Style="{StaticResource TextoEditableTXB}"/>
+                            </StackPanel>
+
+                        </Grid>
+
+                        <Grid Margin="0,0,0,15">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0">
+                                <TextBlock Text="Latitud" 
+                                           Foreground="{StaticResource BoliviaDarkGreen}"
+                Style="{StaticResource SubtitleTXB}"
+                />
+                                <TextBox x:Name="txbLatitud" 
+              Style="{StaticResource TextoEditableTXB}"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                                <TextBlock Text="Longitud" 
+                                           Foreground="{StaticResource BoliviaDarkGreen}"
+                Style="{StaticResource SubtitleTXB}"
+                />
+                                <TextBox x:Name="txbLongitud" 
+              Style="{StaticResource TextoEditableTXB}"/>
+                            </StackPanel>
+
+                        </Grid>
+                        <Border x:Name="mapa"
+                         BorderBrush="{StaticResource BoliviaDarkGreen}" 
+                             BorderThickness="1" 
+                             CornerRadius="10"
+                             Height="500"
+                             Margin="0,20,0,0">
+                        </Border>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

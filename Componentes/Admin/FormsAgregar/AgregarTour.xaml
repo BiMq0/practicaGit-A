@@ -1,0 +1,147 @@
+﻿<Window x:Class="chaski_tours_desk.Componentes.Admin.FormsAgregar.AgregarTour"
+        WindowState="Maximized"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:chaski_tours_desk.Componentes.Admin.FormsAgregar"
+        mc:Ignorable="d"
+        Title="AgregarTour" Height="450" Width="800">
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Columna izquierda - Información del tour -->
+        <Border Style="{StaticResource BordeForms}">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,0,0,13">
+                <StackPanel>
+                    <!-- Encabezado con nombre del tour -->
+                    <Border Background="#D32F2F" CornerRadius="10" Padding="15" Margin="0,0,0,15">
+                        <StackPanel>
+                            <TextBlock Text="Nombre del Tour"
+                                       Style="{StaticResource TituloTXB}"
+                                       Foreground="White" Padding="10"/>
+                            <TextBox x:Name="txbNombreTour" 
+                                       Style="{StaticResource TextoEditableTXB}"
+                                          />
+                        </StackPanel>
+                    </Border>
+
+                    <TextBlock x:Name="hiddenId" Visibility="Hidden"/>
+
+                    <!-- Sección de descripciones -->
+                    <Border BorderBrush="#F44336" BorderThickness="0,1" Padding="0,10" Margin="0,0,0,15">
+                        <StackPanel>
+                            <TextBlock Text="Descripción del Tour" 
+                                       Style="{StaticResource SubtitleTXB}"
+                                       />
+                            <TextBox x:Name="txbDescTour" 
+                                     Style="{StaticResource TextoEditableTXB}"
+                                     MinHeight="80"
+                                     TextWrapping="Wrap"
+                                     AcceptsReturn="True"/>
+                        </StackPanel>
+                    </Border>
+                    <!-- Sección de información práctica -->
+                        <StackPanel>
+                            <TextBlock Text="Costo del Tour" 
+                                       Style="{StaticResource SubtitleTXB}"
+                                       />
+                            <TextBox x:Name="txbCostoTour" 
+                                     Style="{StaticResource TextoEditableTXB}"/>
+
+                        </StackPanel>
+
+                        <StackPanel >
+                            <TextBlock Text="Duración" 
+                                       Style="{StaticResource SubtitleTXB}"
+                                       />
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="10">
+                                <TextBox x:Name="txbDias" 
+                                         Width="40"
+                                      Style="{StaticResource TextoEditableTXB}"/>
+                                <TextBlock Text="Días y " VerticalAlignment="Center" Margin="5,0" Style="{StaticResource SubtitleTXB}"/>
+                                <TextBox x:Name="txbNoches" 
+                                          Width="40"
+                                          Style="{StaticResource TextoEditableTXB}"/>
+                                <TextBlock Text="Noches" 
+                                               Style="{StaticResource SubtitleTXB}"
+                                               />
+                            </StackPanel>
+
+                            <TextBlock Text="Estado" 
+                                       Style="{StaticResource SubtitleTXB}"
+                                       />
+                            <ComboBox x:Name="cmbActivo" 
+                                      IsEnabled="False" 
+                                      SelectedIndex="1" 
+                                      Margin="10"
+                                      Style="{StaticResource Selector}">
+                                <ComboBoxItem Content="Inactivo"/>
+                                <ComboBoxItem Content="Activo"/>
+                            </ComboBox>
+                        </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+        <!-- Columna derecha - Detalles de las rutas -->
+        <Border Grid.Column="1" 
+                Style="{StaticResource BordeForms}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Detalles de l r -->
+                <Border Grid.Row="0" 
+                        Background="#D32F2F" 
+                        CornerRadius="10" 
+                        Padding="15"
+                        Margin="0,0,0,15">
+                    <TextBlock Text="Detalles de las rutas" 
+                               Foreground="White"
+                               Style="{StaticResource TituloTXB}"/>
+                </Border>
+        
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <StackPanel Margin="10">
+                            <TextBlock Text="Sitio Inicial" Style="{StaticResource SubtitleTXB}" />
+                            <ComboBox x:Name="cmbSitioInicial" Style="{StaticResource Selector}" />
+                        </StackPanel>
+
+                        <StackPanel Margin="10">
+                            <TextBlock Text="Sitio Final" Style="{StaticResource SubtitleTXB}" />
+                            <ComboBox x:Name="cmbSitioFinal" Style="{StaticResource Selector}" />
+                        </StackPanel>
+
+                        <StackPanel Margin="10">
+                            <TextBlock Text="Alojamiento" Style="{StaticResource SubtitleTXB}" />
+                            <ComboBox x:Name="cmbAlojamiento" Style="{StaticResource Selector}" />
+                        </StackPanel>
+                        <!-- Botones de acción -->
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                            <Border x:Name="brdEditar" Style="{StaticResource BordeBotonesUser}">
+                                <Button x:Name="btnGuardarTour" 
+                                        Content="Guardar" 
+                                        Style="{StaticResource UserButtonStyle}"
+                                        Click="btnGuardarTour_Click"
+                                        Cursor="Hand"/>
+                            </Border>
+                            <Border x:Name="brdBtnVolver" Style="{StaticResource BordeBotones}">
+                                <Button x:Name="btnVolver"
+                                        Style="{StaticResource SecondaryButtonStyle}"
+                                        Click="btnCerrar_Click"
+                                        Content="Cancelar"
+                                        Cursor="Hand"/>
+                            </Border>
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

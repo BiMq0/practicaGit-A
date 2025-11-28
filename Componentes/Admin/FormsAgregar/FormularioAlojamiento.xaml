@@ -1,0 +1,323 @@
+﻿<Window x:Class="chaski_tours_desk.Componentes.Admin.FormsAgregar.FormularioAlojamiento"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:chaski_tours_desk.Componentes.Admin"
+        mc:Ignorable="d"
+        Title="Registro de Alojamiento" 
+        Height="650" 
+        Width="900"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource GeneralBackground}">
+
+    <Grid Margin="20">
+        <Border Style="{StaticResource BordeForms}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Título -->
+                <TextBlock Text="Registro de Alojamiento" 
+                           Style="{StaticResource TituloTXB}"
+                           Foreground="{StaticResource BoliviaRed}"
+                           HorizontalAlignment="Center" 
+                           Margin="0,0,0,20"/>
+
+                <!-- Contenido principal -->
+                <StackPanel Grid.Row="1" Cursor="">
+                    <!-- Datos del Alojamiento -->
+                    <GroupBox Header="Datos del Alojamiento" 
+                              FontWeight="SemiBold"
+                              Foreground="{StaticResource BoliviaRed}"
+                              Margin="0,0,0,20">
+                        <StackPanel Margin="10">
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,15" HorizontalAlignment="Center">
+                                <TextBlock Text="Nombre:" 
+                                           Width="180" 
+                                           VerticalAlignment="Center"
+                                           Foreground="{StaticResource BoliviaRed}"
+                                           Style="{StaticResource TextoTXB}"/>
+                                <Border CornerRadius="15" Background="White" Margin="10,0" Width="350">
+                                    <TextBox x:Name="txtNombreAlojamiento" 
+                                             Margin="10,0"
+                                             Background="White"
+                                             BorderThickness="0"
+                                             FontSize="14"
+                                             Foreground="Black"/>
+                                </Border>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <TextBlock Text="Nro. Estrellas:" 
+                                           Width="180" 
+                                           VerticalAlignment="Center"
+                                           Foreground="{StaticResource BoliviaRed}"
+                                           Style="{StaticResource TextoTXB}"/>
+                                <Border CornerRadius="15" Background="White" Width="120" Margin="10,0">
+                                    <TextBox x:Name="txtNroEstrellas" 
+                                             HorizontalContentAlignment="Center"
+                                             Margin="10,0"
+                                             Background="White"
+                                             BorderThickness="0"
+                                             FontSize="14"
+                                             Foreground="Black"/>
+                                </Border>
+                            </StackPanel>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <!-- Tipos de Habitaciones -->
+                    <GroupBox Header="Tipos de Habitaciones Disponibles"
+                              FontWeight="SemiBold"
+                              Foreground="{StaticResource BoliviaRed}"
+                              Visibility="Visible"
+                              x:Name="groupBoxTiposHabitaciones">
+                        <StackPanel Margin="10">
+                            <!-- Individual -->
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,15" HorizontalAlignment="Center">
+                                <CheckBox x:Name="chkIndividual" 
+                                          Content="Individual" 
+                                          Width="150"
+                                          Foreground="{StaticResource BoliviaRed}"
+                                          FontWeight="Bold"
+                                          FontSize="16"
+                                          VerticalAlignment="Center"
+                                          Margin="0,0,20,0"/>
+                                <TextBlock Text="Cantidad:" 
+                                           VerticalAlignment="Center"
+                                           Foreground="{StaticResource BoliviaRed}"
+                                           Style="{StaticResource TextoTXB}"
+                                           Margin="0,0,20,0"/>
+                                <Border CornerRadius="15" Background="White" Width="100">
+                                    <TextBox x:Name="txtCantidadIndividual" 
+                                             HorizontalContentAlignment="Center"
+                                             Background="White"
+                                             BorderThickness="0"
+                                             FontSize="14"
+                                             Foreground="Black"/>
+                                </Border>
+                            </StackPanel>
+
+                            <!-- Doble -->
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,15" HorizontalAlignment="Center">
+                                <CheckBox x:Name="chkDoble" 
+                                          Content="Doble" 
+                                          Width="150"
+                                          Foreground="{StaticResource BoliviaRed}"
+                                          FontWeight="Bold"
+                                          FontSize="16"
+                                          VerticalAlignment="Center"
+                                          Margin="0,0,20,0"/>
+                                <TextBlock Text="Cantidad:" 
+                                           VerticalAlignment="Center"
+                                           Foreground="{StaticResource BoliviaRed}"
+                                           Style="{StaticResource TextoTXB}"
+                                           Margin="0,0,20,0"/>
+                                <Border CornerRadius="15" Background="White" Width="100">
+                                    <TextBox x:Name="txtCantidadDoble" 
+                                             HorizontalContentAlignment="Center"
+                                             Background="White"
+                                             BorderThickness="0"
+                                             FontSize="14"
+                                             Foreground="Black"/>
+                                </Border>
+                            </StackPanel>
+
+                            <!-- Suite -->
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,15" HorizontalAlignment="Center">
+                                <CheckBox x:Name="chkSuite" 
+                                          Content="Suite" 
+                                          Width="150"
+                                          Foreground="{StaticResource BoliviaRed}"
+                                          FontWeight="Bold"
+                                          FontSize="16"
+                                          VerticalAlignment="Center"
+                                          Margin="0,0,20,0"/>
+                                <TextBlock Text="Cantidad:" 
+                                           VerticalAlignment="Center"
+                                           Foreground="{StaticResource BoliviaRed}"
+                                           Style="{StaticResource TextoTXB}"
+                                           Margin="0,0,20,0"/>
+                                <Border CornerRadius="15" Background="White" Width="100">
+                                    <TextBox x:Name="txtCantidadSuite" 
+                                             HorizontalContentAlignment="Center"
+                                             Background="White"
+                                             BorderThickness="0"
+                                             FontSize="14"
+                                             Foreground="Black"/>
+                                </Border>
+                            </StackPanel>
+
+                            <!-- Familiar -->
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <CheckBox x:Name="chkFamiliar" 
+                                          Content="Familiar" 
+                                          Width="150"
+                                          Foreground="{StaticResource BoliviaRed}"
+                                          FontWeight="Bold"
+                                          FontSize="16"
+                                          VerticalAlignment="Center"
+                                          Margin="0,0,20,0"/>
+                                <TextBlock Text="Cantidad:" 
+                                           VerticalAlignment="Center"
+                                           Foreground="{StaticResource BoliviaRed}"
+                                           Style="{StaticResource TextoTXB}"
+                                           Margin="0,0,20,0"/>
+                                <Border CornerRadius="15" Background="White" Width="100">
+                                    <TextBox x:Name="txtCantidadFamiliar" 
+                                             HorizontalContentAlignment="Center"
+                                             Background="White"
+                                             BorderThickness="0"
+                                             FontSize="14"
+                                             Foreground="Black"/>
+                                </Border>
+                            </StackPanel>
+                        </StackPanel>
+                    </GroupBox>
+                    <!-- Panel para agregar habitación -->
+                    <!-- Panel para agregar habitación (encima del DataGrid y con borde) -->
+                    <StackPanel x:Name="panelAgregarHabitacion"
+            Orientation="Horizontal"
+            Visibility="Collapsed"
+            Margin="0,10,0,0"
+            HorizontalAlignment="Center">
+
+                        <TextBlock Text="Tipo de habitación:"
+               VerticalAlignment="Center"
+               Margin="0,0,10,0"
+               Foreground="{StaticResource BoliviaRed}"
+               Style="{StaticResource TextoTXB}"/>
+
+                        <ComboBox x:Name="cmbTipoHabitacion"
+              Width="150"
+              Margin="0,0,10,0"
+              Background="White"
+              Foreground="Black"
+              FontSize="14">
+                            <ComboBoxItem Content="Individual" />
+                            <ComboBoxItem Content="Doble" />
+                            <ComboBoxItem Content="Suite" />
+                            <ComboBoxItem Content="Familiar" />
+                        </ComboBox>
+
+                        <Border Style="{StaticResource BordeBotones}">
+                            <Button Content="Agregar Habitación"
+                Click="btnAgregarHabitacion_Click"
+                Style="{StaticResource PrimaryButtonStyle}"
+                Padding="10,2"/>
+                        </Border>
+                    </StackPanel>
+
+
+                    <!-- Tabla de habitaciones asociadas -->
+                    <GroupBox Header="Habitaciones del Alojamiento"
+                      FontWeight="SemiBold"
+                      Foreground="{StaticResource BoliviaRed}"
+                      Margin="0,20,0,0"
+                      Visibility="Collapsed"
+                      x:Name="grupoHabitaciones">
+
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" Height="200">
+                            <DataGrid x:Name="dgHabitaciones"
+                              AutoGenerateColumns="False"
+                              CanUserAddRows="False"
+                              IsReadOnly="False"
+                              HeadersVisibility="Column"
+                              Margin="10"
+                              SelectionMode="Single"
+                              AlternatingRowBackground="LightGray"
+                              MinColumnWidth="100"
+                              CellEditEnding="dgHabitaciones_CellEditEnding"     
+                             CurrentCellChanged="dgHabitaciones_CurrentCellChanged">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Nro." Binding="{Binding nro}" Width="100" IsReadOnly="True"/>
+                                    <DataGridTextColumn Header="Tipo" Binding="{Binding tipo}" Width="*" IsReadOnly="True"/>
+                                    <DataGridTextColumn Header="Capacidad" Binding="{Binding capacidad}" Width="120" IsReadOnly="True"/>
+                                    <!-- Para la columna de Disponibilidad, si quieres que sea editable, es mejor usar DataGridComboBoxColumn o DataGridCheckBoxColumn -->
+                                    <DataGridComboBoxColumn Header="Disponibilidad" 
+                        Width="*"
+                        SelectedItemBinding="{Binding disponible, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                        <DataGridComboBoxColumn.ItemsSource>
+                                            <x:Array Type="{x:Type sys:String}" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                                                <sys:String>Disponible</sys:String>
+                                                <sys:String>Ocupada</sys:String>
+                                            </x:Array>
+                                        </DataGridComboBoxColumn.ItemsSource>
+                                    </DataGridComboBoxColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </ScrollViewer>
+
+                    </GroupBox>
+
+
+                </StackPanel>
+
+                <!-- Botones -->
+                <StackPanel Grid.Row="2"
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Center" 
+                    Margin="0,20,0,0"
+                    x:Name="panelBotones">
+
+                    <!-- Botón Registrar -->
+                    <Border Style="{StaticResource BordeBotones}" Margin="0,0,20,0" x:Name="borderRegistrar">
+                        <Button x:Name="btnRegistrar" 
+                            Content="Registrar" 
+                            Click="btnRegistrar_Click"
+                            Style="{StaticResource PrimaryButtonStyle}"/>
+                    </Border>
+
+                    <!-- Botón Editar -->
+                    <Border Style="{StaticResource BordeBotones}" Margin="0,0,20,0" x:Name="borderEditar" Visibility="Hidden">
+                       <Button x:Name="btnEditar" 
+                        Content="Editar" 
+                        Click="btnEditar_Click"
+                        Style="{StaticResource PrimaryButtonStyle}"/>
+                    </Border>
+
+                    <!-- Botón Guardar -->
+                    <Border Style="{StaticResource BordeBotones}" Margin="0,0,20,0" x:Name="borderGuardar" Visibility="Collapsed">
+                        <Button x:Name="btnGuardar" 
+                            Content="Guardar" 
+                              Click="btnGuardar_Click"
+                            Style="{StaticResource PrimaryButtonStyle}"/>
+                    </Border>
+
+                    <!-- Botón Eliminar -->
+                    <Border Style="{StaticResource BordeBotonesSecundarios}" x:Name="borderEliminar" Visibility="Collapsed">
+                        <Button x:Name="btnEliminar" 
+                            Content="Eliminar" 
+                            Click="btnEliminar_Click"
+                            Style="{StaticResource PrimaryButtonStyle}" Cursor=""/>
+                    </Border>
+
+                    <!-- Botón Cancelar -->
+                    <Border Style="{StaticResource BordeBotonesSecundarios}" Margin="20,0,0,0">
+                        <Button x:Name="btnCancelar" 
+                            Content="Cancelar"
+                            Click="btnCancelar_Click_1"
+                            Style="{StaticResource PrimaryButtonStyle}"/>
+                    </Border>
+                    <!-- Botón agregar habitacion -->
+                    <Border Style="{StaticResource BordeBotones}" Margin="0,0,20,0" x:Name="borderAgregarHabitacion" Visibility="Hidden">
+                        <Button x:Name="btnAgregarHabitacion" 
+                            Content="Editar" 
+                            Click="btnAgregarHabitacion_Click"
+                            Style="{StaticResource PrimaryButtonStyle}"/>
+                    </Border>
+                </StackPanel>
+                
+
+                
+
+            </Grid>
+                
+        </Border>
+        
+    </Grid>
+</Window>
