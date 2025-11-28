@@ -319,7 +319,7 @@
             </Style.Triggers>
         </Style>
 
-
+jlk;afsdjlkasdfjl;kasdjflksdajl;kfajsl;kfjeoiajfeoisjafoijsaoifjesoijfoisejfseoij
         <Style x:Key="SecondaryButtonStyle" TargetType="Button" BasedOn="{StaticResource PrimaryButtonStyle}">
             <Setter Property="Content" Value="Agregar +"/>
             <Style.Triggers>
